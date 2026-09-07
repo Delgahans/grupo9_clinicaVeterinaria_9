@@ -1,0 +1,62 @@
+package clinica_veterinaria.model.domain;
+
+public class Animal {
+    private String numeroFicha;
+    private String nombre;
+    private String especie;
+    private String raza;
+    private int edadAnios;
+
+    public Animal(String numeroFicha, String nombre, String especie, String raza, int edadAnios) {
+        this.numeroFicha = numeroFicha;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.edadAnios = edadAnios;
+    }
+
+    public String getNumeroFicha() {
+        return numeroFicha;
+    }
+
+    public void setNumeroFicha(String numeroFicha) {
+        this.numeroFicha = numeroFicha;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    public int getEdadAnios() {
+        return edadAnios;
+    }
+
+    public void setEdadAnios(int edadAnios) {
+        this.edadAnios = edadAnios;
+    }
+
+    
+
+    
+
+}
