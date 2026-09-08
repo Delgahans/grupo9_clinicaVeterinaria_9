@@ -1,16 +1,22 @@
-package clinica_veterinaria.model.domain;
+package model.domain;
 
 import java.time.LocalDate;
 
 public class Vacuna {
+
     private String nombre;
     private LocalDate fechaAplicacion;
     private LocalDate proximaFecha;
+    private Animal animal; // Asociación hacia Animal según UML
 
-    public Vacuna(String nombre, LocalDate fechaAplicacion, LocalDate proximaFecha) {
+    public Vacuna() {
+    }
+
+    public Vacuna(String nombre, LocalDate fechaAplicacion, LocalDate proximaFecha, Animal animal) {
         this.nombre = nombre;
         this.fechaAplicacion = fechaAplicacion;
         this.proximaFecha = proximaFecha;
+        this.animal = animal;
     }
 
     public String getNombre() {
@@ -37,9 +43,11 @@ public class Vacuna {
         this.proximaFecha = proximaFecha;
     }
 
-    
+    public Animal getAnimal() {
+        return animal;
+    }
 
-    
-
-
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
 }
