@@ -7,16 +7,18 @@ public class Consulta {
     private String diagnostico;
     private String tratamiento;
     private LocalDate fecha;
+    private Animal animal;
+    private Veterinario veterinario;
 
-    //Constructor
-    public Consulta(String motivo, String diagnostico, String tratamiento, LocalDate fecha) {
+    public Consulta(String motivo, String diagnostico, String tratamiento, LocalDate fecha, Animal animal, Veterinario veterinario) {
         this.motivo = motivo;
         this.diagnostico = diagnostico;
         this.tratamiento = tratamiento;
         this.fecha = fecha;
+        this.animal = animal;
+        this.veterinario = veterinario;
     }
 
-    // Getters y Setters
     public String getMotivo() {
         return motivo;
     }
@@ -47,5 +49,21 @@ public class Consulta {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
+
+    public Veterinario getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
     }
 }
