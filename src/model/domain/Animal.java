@@ -1,4 +1,4 @@
-package clinica_veterinaria.model.domain;
+package model.domain;
 
 public class Animal {
     private String numeroFicha;
@@ -54,9 +54,4 @@ public class Animal {
     public void setEdadAnios(int edadAnios) {
         this.edadAnios = edadAnios;
     }
-
-    
-
-    
-
 }
