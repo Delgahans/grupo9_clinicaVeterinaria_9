@@ -1,3 +1,5 @@
+package model.domain;
+
 public abstract class Persona implements RolEnClinica {
     private String identificacion;
     private String nombre;

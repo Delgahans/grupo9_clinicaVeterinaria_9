@@ -7,10 +7,7 @@ public class Vacuna {
     private String nombre;
     private LocalDate fechaAplicacion;
     private LocalDate proximaFecha;
-    private Animal animal; // Asociación hacia Animal según UML
-
-    public Vacuna() {
-    }
+    private Animal animal;
 
     public Vacuna(String nombre, LocalDate fechaAplicacion, LocalDate proximaFecha, Animal animal) {
         this.nombre = nombre;
