@@ -8,6 +8,10 @@ public class Animal {
     private int edadAnios;
 
     public Animal(String numeroFicha, String nombre, String especie, String raza, int edadAnios) {
+        if (numeroFicha == null || numeroFicha.isBlank()) {
+            throw new IllegalArgumentException("El numero de ficha no puede estar vacio");
+        }
+
         this.numeroFicha = numeroFicha;
         this.nombre = nombre;
         this.especie = especie;
