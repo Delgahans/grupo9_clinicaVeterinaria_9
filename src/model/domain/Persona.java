@@ -1,4 +1,4 @@
-package model.domain;
+package model.domain;   
 
 public abstract class Persona implements RolEnClinica {
     private String identificacion;
@@ -6,6 +6,10 @@ public abstract class Persona implements RolEnClinica {
     private String telefono;
 
     public Persona(String identificacion, String nombre, String telefono) {
+        if (identificacion == null || identificacion.isBlank()) {
+            throw new IllegalArgumentException("La identificacion no puede estar vacia");
+        }
+
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.telefono = telefono;
