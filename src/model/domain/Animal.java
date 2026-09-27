@@ -1,11 +1,14 @@
 package model.domain;
 
+import model.structures.ListaSimple;
+
 public class Animal {
     private String numeroFicha;
     private String nombre;
     private String especie;
     private String raza;
     private int edadAnios;
+    private ListaSimple<Vacuna> vacunas;
 
     public Animal(String numeroFicha, String nombre, String especie, String raza, int edadAnios) {
         if (numeroFicha == null || numeroFicha.isBlank()) {
@@ -17,6 +20,7 @@ public class Animal {
         this.especie = especie;
         this.raza = raza;
         this.edadAnios = edadAnios;
+        this.vacunas = new ListaSimple<>();
     }
 
     public String getNumeroFicha() {
@@ -57,5 +61,21 @@ public class Animal {
 
     public void setEdadAnios(int edadAnios) {
         this.edadAnios = edadAnios;
+    }
+
+    public ListaSimple<Vacuna> getVacunas() {
+        return vacunas;
+    }
+
+    public void agregarVacuna(Vacuna vacuna) {
+        vacunas.insertarFinal(vacuna);
+    }
+
+    public boolean buscarVacuna(Vacuna vacuna) {
+        return vacunas.buscarPorValor(vacuna);
+    }
+
+    public boolean eliminarVacuna(Vacuna vacuna) {
+        return vacunas.eliminarPorValor(vacuna);
     }
 }
