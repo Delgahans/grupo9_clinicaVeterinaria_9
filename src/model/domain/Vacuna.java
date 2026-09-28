@@ -1,6 +1,8 @@
+```java
 package model.domain;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Vacuna {
 
@@ -46,5 +48,27 @@ public class Vacuna {
 
     public void setAnimal(Animal animal) {
         this.animal = animal;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Vacuna)) {
+            return false;
+        }
+
+        Vacuna vacuna = (Vacuna) o;
+
+        return Objects.equals(nombre, vacuna.nombre)
+                && Objects.equals(fechaAplicacion, vacuna.fechaAplicacion)
+                && Objects.equals(proximaFecha, vacuna.proximaFecha);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, fechaAplicacion, proximaFecha);
     }
 }
