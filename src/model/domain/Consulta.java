@@ -1,4 +1,3 @@
-```java
 package model.domain;
 
 import java.time.LocalDate;
