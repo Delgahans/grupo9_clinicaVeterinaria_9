@@ -85,6 +85,10 @@ public class ListaSimple<T> {
         return actual.getDato();
     }
 
+    public Nodo<T> getHead() {
+        return head;
+    }
+
     public boolean buscarPorValor(T dato) {
         Nodo<T> actual = head;
 
