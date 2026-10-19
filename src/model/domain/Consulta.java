@@ -1,6 +1,7 @@
 package model.domain;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Consulta {
     private String motivo;
@@ -66,4 +67,28 @@ public class Consulta {
     public void setVeterinario(Veterinario veterinario) {
         this.veterinario = veterinario;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Consulta)) {
+            return false;
+        }
+
+        Consulta consulta = (Consulta) o;
+
+        return Objects.equals(motivo, consulta.motivo)
+                && Objects.equals(diagnostico, consulta.diagnostico)
+                && Objects.equals(tratamiento, consulta.tratamiento)
+                && Objects.equals(fecha, consulta.fecha);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(motivo, diagnostico, tratamiento, fecha);
+    }
 }
+

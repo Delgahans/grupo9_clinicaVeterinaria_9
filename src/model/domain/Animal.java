@@ -1,6 +1,7 @@
 package model.domain;
 
 import model.structures.ListaSimple;
+import model.structures.Pila;
 
 public class Animal {
     private String numeroFicha;
@@ -9,6 +10,8 @@ public class Animal {
     private String raza;
     private int edadAnios;
     private ListaSimple<Vacuna> vacunas;
+    private ListaSimple<Consulta> consultas;
+    private Pila<Consulta> operacionesRecientes;   
 
     public Animal(String numeroFicha, String nombre, String especie, String raza, int edadAnios) {
         if (numeroFicha == null || numeroFicha.isBlank()) {
@@ -21,6 +24,12 @@ public class Animal {
         this.raza = raza;
         this.edadAnios = edadAnios;
         this.vacunas = new ListaSimple<>();
+        this.consultas = new ListaSimple<>();
+        this.operacionesRecientes = new Pila<>();
+    }
+
+    public Pila<Consulta> getOperacionesRecientes() {
+    return operacionesRecientes;
     }
 
     public String getNumeroFicha() {
@@ -77,5 +86,21 @@ public class Animal {
 
     public boolean eliminarVacuna(Vacuna vacuna) {
         return vacunas.eliminarPorValor(vacuna);
+    }
+
+    public ListaSimple<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void agregarConsulta(Consulta consulta) {
+        consultas.insertarFinal(consulta);
+    }
+
+    public boolean buscarConsulta(Consulta consulta) {
+        return consultas.buscarPorValor(consulta);
+    }
+
+    public boolean eliminarConsulta(Consulta consulta) {
+        return consultas.eliminarPorValor(consulta);
     }
 }
