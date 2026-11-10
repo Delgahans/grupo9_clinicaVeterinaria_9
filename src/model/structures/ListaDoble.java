@@ -6,6 +6,24 @@ public class ListaDoble<T> {
     private NodoDoble<T> tail;
     private int tamanio;
 
+
+    public T obtenerSiguiente(NodoDoble<T> nodo) {
+        if (nodo == null || nodo.getSiguiente() == null) {
+            return null;
+        }
+
+        return nodo.getSiguiente().getDato();
+    }
+
+    public T obtenerAnterior(NodoDoble<T> nodo) {
+        if (nodo == null || nodo.getAnterior() == null) {
+            return null;
+        }
+
+        return nodo.getAnterior().getDato();
+    }
+
+
     public ListaDoble() {
         this.head = null;
         this.tail = null;
