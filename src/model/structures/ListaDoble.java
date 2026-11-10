@@ -176,4 +176,11 @@ public class ListaDoble<T> {
         return tail.getDato();
     }
 
+    public NodoDoble<T> obtenerPrimerNodo() {
+    return head;
+}
+
+    public NodoDoble<T> obtenerUltimoNodo() {
+        return tail;
+    }
 }
