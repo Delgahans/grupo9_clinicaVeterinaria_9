@@ -140,4 +140,22 @@ public class ListaDoble<T> {
 
         return nodo.getDato();
     }
+
+
+    public T obtenerPrimero() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        return head.getDato();
+    }
+
+    public T obtenerUltimo() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        return tail.getDato();
+    }
+
 }
