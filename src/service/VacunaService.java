@@ -1,4 +1,3 @@
-```java
 package service;
 
 import model.domain.Animal;
@@ -22,4 +21,3 @@ public class VacunaService {
         return animal.getVacunas().getTamano();
     }
 }
-```
