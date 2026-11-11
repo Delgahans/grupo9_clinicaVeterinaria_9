@@ -452,6 +452,9 @@ public class SeguimientoHospitalizadosService {
         evolucionActual =
                 seguimiento.getEvoluciones().obtenerUltimoNodo();
 
+        evolucionActual =
+        seguimiento.getEvoluciones().obtenerUltimoNodo();
+        
         return "Se cargaron "
                 + cantidadEvoluciones()
                 + " evoluciones correctamente.";
