@@ -1,28 +1,34 @@
-
-import model.domain.Animal;
-import service.SalaDeEsperaService;
-import view.MenuColaView;
+import model.domain.SeguimientoHospitalizados;
+import service.MascotaService;
+import service.SeguimientoHospitalizadosService;
+import view.MenuEvolucionesView;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        SalaDeEsperaService salaService = new SalaDeEsperaService();
+        // Primero se cargan las mascotas.
+        MascotaService mascotaService =
+                new MascotaService();
 
-        Animal animal1 = new Animal(
-                "F001", "Max", "Perro", "Labrador", 5);
+        // Después se crea el seguimiento y se cargan
+        // las evoluciones relacionadas con esas mascotas.
+        SeguimientoHospitalizados seguimiento =
+                new SeguimientoHospitalizados(
+                        "Clínica Veterinaria");
 
-        Animal animal2 = new Animal(
-                "F002", "Luna", "Gato", "Criollo", 3);
+        SeguimientoHospitalizadosService evolucionService =
+                new SeguimientoHospitalizadosService(
+                        seguimiento,
+                        mascotaService);
 
-        Animal animal3 = new Animal(
-                "F003", "Rocky", "Perro", "Beagle", 4);
+        // Se crea el menú con las mismas instancias
+        // de los Services durante toda la ejecución.
+        MenuEvolucionesView menu =
+                new MenuEvolucionesView(
+                        mascotaService,
+                        evolucionService);
 
-        salaService.registrarAnimal(animal1);
-        salaService.registrarAnimal(animal2);
-        salaService.registrarAnimal(animal3);
-
-        MenuColaView menu = new MenuColaView(salaService);
         menu.iniciar();
     }
 }
