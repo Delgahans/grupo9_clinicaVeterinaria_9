@@ -2,6 +2,7 @@ package model.domain;
 
 import model.structures.ListaSimple;
 import model.structures.Pila;
+import java.time.LocalDate;
 
 public class Animal {
     private String numeroFicha;
@@ -12,10 +13,26 @@ public class Animal {
     private ListaSimple<Vacuna> vacunas;
     private ListaSimple<Consulta> consultas;
     private Pila<Consulta> operacionesRecientes;   
+    private LocalDate fechaNacimiento;
 
-    public Animal(String numeroFicha, String nombre, String especie, String raza, int edadAnios) {
+    public Animal(String numeroFicha, String nombre, String especie,
+        String raza, int edadAnios) {
+
+    this(numeroFicha, nombre, especie, raza, edadAnios,
+            LocalDate.now().minusYears(edadAnios));
+}
+
+    public Animal(String numeroFicha, String nombre, String especie,
+            String raza, int edadAnios, LocalDate fechaNacimiento) {
+
         if (numeroFicha == null || numeroFicha.isBlank()) {
-            throw new IllegalArgumentException("El numero de ficha no puede estar vacio");
+            throw new IllegalArgumentException(
+                    "El numero de ficha no puede estar vacio");
+        }
+
+        if (fechaNacimiento == null) {
+            throw new IllegalArgumentException(
+                    "La fecha de nacimiento no puede ser nula");
         }
 
         this.numeroFicha = numeroFicha;
@@ -23,6 +40,8 @@ public class Animal {
         this.especie = especie;
         this.raza = raza;
         this.edadAnios = edadAnios;
+        this.fechaNacimiento = fechaNacimiento;
+
         this.vacunas = new ListaSimple<>();
         this.consultas = new ListaSimple<>();
         this.operacionesRecientes = new Pila<>();
@@ -102,5 +121,18 @@ public class Animal {
 
     public boolean eliminarConsulta(Consulta consulta) {
         return consultas.eliminarPorValor(consulta);
+    }
+
+    public LocalDate getFechaNacimiento() {
+    return fechaNacimiento;
+}
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        if (fechaNacimiento == null) {
+            throw new IllegalArgumentException(
+                    "La fecha de nacimiento no puede ser nula");
+        }
+
+        this.fechaNacimiento = fechaNacimiento;
     }
 }
