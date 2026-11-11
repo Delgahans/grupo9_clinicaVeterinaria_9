@@ -1,0 +1,6 @@
+
+PERRO;F001;Max;Perro;2021-05-10;Labrador
+GATO;F002;Luna;Gato;2022-03-12;Criollo
+PERRO;F003;Rocky;Perro;2020-08-15;Beagle
+GATO;F004;Milo;Gato;2023-01-20;Persa
+PERRO;F005;Toby;Perro;2019-11-05;Golden Retriever
