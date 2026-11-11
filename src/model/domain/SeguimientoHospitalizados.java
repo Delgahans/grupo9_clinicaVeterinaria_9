@@ -9,6 +9,7 @@ public class SeguimientoHospitalizados {
     private ListaDoble<Evolucion> evoluciones;
 
     public SeguimientoHospitalizados(String clinica) {
+
         if (clinica == null || clinica.isBlank()) {
             throw new IllegalArgumentException(
                     "El nombre de la clinica no puede estar vacio");
@@ -27,6 +28,7 @@ public class SeguimientoHospitalizados {
     }
 
     public void agregarEvolucion(Evolucion evolucion) {
+
         if (evolucion == null) {
             throw new IllegalArgumentException(
                     "La evolucion no puede ser null");
@@ -39,3 +41,4 @@ public class SeguimientoHospitalizados {
         return evoluciones.getTamanio();
     }
 }
+
