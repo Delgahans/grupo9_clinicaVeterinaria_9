@@ -135,4 +135,14 @@ public class Animal {
 
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    @Override
+    public String toString() {
+        return "Ficha: " + numeroFicha
+                + " | Nombre: " + nombre
+                + " | Especie: " + especie
+                + " | Raza: " + raza
+                + " | Fecha de nacimiento: " + fechaNacimiento
+                + " | Edad: " + edadAnios;
+    }
 }
